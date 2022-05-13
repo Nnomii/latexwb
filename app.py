@@ -14,7 +14,13 @@ def generate(event=None):
 # Make image command (transforms latex input into a resulting expression image)
 def make_image(event=None):
     try:
-        sp.preview('\Huge $' + latex_entry.get() + '$', viewer='file', filename='images/res.png')
+        # Add packages to the preamble to customise the latex configuration
+        preamble = "\\documentclass{article}\n" \
+                   "\\pagestyle{empty}\n" \
+                   "\\usepackage{amsmath, amssymb, amsfonts, euler}\n" \
+                   "\\begin{document}"
+        sp.preview('\Huge $' + latex_entry.get() + '$', viewer='file', preamble=preamble, filename='images/res.png')
+        # The resulting image is saved under res.png for easy future access
         res = ImageTk.PhotoImage(Image.open('images/res.png'))
         image.configure(text='')
         image.configure(image=res)
