@@ -11,6 +11,7 @@ def on_close(screen):
     screen.destroy()
 
 
+# Function to display the info window as a new popup
 def display(root):
     global displayed
     if displayed is not None:
