@@ -33,8 +33,7 @@ def make_image(event=None):
 
         # The resulting image is saved under res.png for easy future access
         res = ImageTk.PhotoImage(Image.open('images/res.png'))
-        image.configure(text='')
-        image.configure(image=res)
+        image.configure(text='', image=res)
         image.image = res
         copy_button.grid()
         copy_label.grid_remove()
