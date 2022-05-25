@@ -50,10 +50,10 @@ def make_image(event=None):
 
 # Command tied to the convert button to start the image creation process
 def convert(event=None):
-    t1 = Thread(target=generate)
-    t2 = Thread(target=make_image)
-    t1.start()
-    t2.start()
+    generate_thread = Thread(target=generate)
+    make_image_thread = Thread(target=make_image)
+    generate_thread.start()
+    make_image_thread.start()
 
 
 # Command used to copy the displayed image to the clipboard
