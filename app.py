@@ -2,11 +2,11 @@ import tkinter as tk
 import sympy as sp
 import win32clipboard as clip
 import win32con
+import screens.info
 
 from io import BytesIO
 from PIL import ImageTk, Image
 from threading import Thread
-import screens.info
 
 # Version number & global variables
 version = 1.0
