@@ -8,6 +8,8 @@ from PIL import ImageTk, Image
 from threading import Thread
 import screens.info
 
+# Version number & global variables
+version = 1.0
 global image_exists
 image_exists = False
 
@@ -77,7 +79,6 @@ def copy(event=None):
 
 
 if __name__ == '__main__':
-
     # Initialise window
     root = tk.Tk()
     root.resizable(False, False)
@@ -140,7 +141,7 @@ if __name__ == '__main__':
     info_button.grid(column=0, row=0, sticky=tk.E, pady=340, padx=35)
 
     # Version text
-    version_label = tk.Label(root, text='Version 1.0', bg='white')
+    version_label = tk.Label(root, text='Version ' + str(version), bg='white')
     version_label.grid(column=0, row=0, sticky=tk.W, pady=347, padx=40)
 
     root.mainloop()
