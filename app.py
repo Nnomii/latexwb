@@ -16,8 +16,7 @@ image_exists = False
 
 # Updates the image field to inform the user that the expression image is generating
 def generate(event=None):
-    image.configure(image='')
-    image.configure(text='Generating...')
+    image.configure(image='', text='Generating...')
 
 
 # Make image command (transforms latex input into a resulting expression image)
