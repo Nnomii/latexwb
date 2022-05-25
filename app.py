@@ -43,8 +43,7 @@ def make_image(event=None):
 
     except Exception as e:
         # An exception at this point means that there is a syntax error in the user's latex input
-        image.configure(image='')
-        image.configure(text=str(e).split(')')[-1].replace(r'\r\n', '\n'))  # Displays the latex error
+        image.configure(image='', text=str(e).split(')')[-1].replace(r'\r\n', '\n'))  # Displays the latex error
         copy_button.grid_remove()
         copy_label.grid_remove()
         image_exists = False
