@@ -16,6 +16,7 @@ def display(root):
     global displayed
     if displayed is not None:
         displayed.lift()
+        displayed.focus_force()
     else:
         info_screen = tkinter.Toplevel(root)
         info_screen.resizable(False, False)
@@ -24,4 +25,5 @@ def display(root):
         info_screen.geometry('600x300')
         info_screen.iconbitmap('images/x_icon.ico')
         info_screen.protocol('WM_DELETE_WINDOW', lambda x=info_screen: on_close(x))
+        info_screen.focus_force()
         displayed = info_screen
